@@ -295,7 +295,7 @@ int main(int argc, argv_t argv) {
         if (options.mime_type != NULL) {
             source_offer(copy_action->source, options.mime_type);
         }
-        if (options.mime_type == NULL || mime_type_is_text(options.mime_type)) {
+        if (options.mime_type == NULL || mime_type_is_text(options.mime_type) || strcmp(options.mime_type, "x-kde-passwordManagerHint") == 0) {
             /* Offer a few generic plain text formats */
             source_offer(copy_action->source, text_plain);
             source_offer(copy_action->source, text_plain_utf8);
